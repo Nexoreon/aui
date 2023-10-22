@@ -1,5 +1,5 @@
 {
-  "name": "andromeda-ui",
+  "name": "@p-andromeda/ui",
   "version": "1.0.0",
   "description": "Simple UI library for React",
   "main": "dist/index.js",
