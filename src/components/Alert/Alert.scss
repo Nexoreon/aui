@@ -1,0 +1,56 @@
+.aui-alert {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: var(--aui-alert-padding);
+    border-radius: var(--aui-border-radius);
+    font-size: 14px;
+    flex: 1;
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        height: 32px;
+        width: 32px;
+
+        & i {
+            font-size: 25px;
+        }
+    }
+
+    &__content {
+        font-weight: 500;
+        
+        & > h4 {
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+
+        & a {
+            color: rgba(255,255,255,.8);
+            font-weight: 500;
+
+            &:hover { color: #fff }
+        }
+    }
+    
+}
+
+// ALERT TYPES
+.aui-alert-info {
+    background: var(--aui-alert-info);
+}
+
+.aui-alert-success {
+    background: var(--aui-alert-success);
+}
+
+.aui-alert-warning {
+    background: var(--aui-alert-warning);
+}
+
+.aui-alert-error {
+    background: var(--aui-alert-error);
+}

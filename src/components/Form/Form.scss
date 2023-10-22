@@ -1,0 +1,45 @@
+.aui-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__buttons {
+        display: flex;
+        margin-top: auto;
+        padding-bottom: 15px;
+        flex-direction: row !important;
+        justify-content: flex-end;
+        gap: 15px;
+
+        @include respond(phone) {
+            & button { flex: 1 }
+        }
+    }
+}
+
+.aui-form-controller {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        display: flex;
+        color: rgba(255,255,255, .85);
+        font-family: var(--aui-font-main);
+        font-size: 14px;
+        font-weight: 500;
+        padding-bottom: 5px;
+        pointer-events:all;
+
+        & > span {
+            color: red;
+            font-size: 18px;
+            padding-right: 3px;
+        }
+    }
+
+    &__error {
+        color: red;
+        font-size: 12px;
+        padding-top: 5px;
+    }
+}

@@ -1,0 +1,88 @@
+// MAIN
+.aui-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    line-height: calc(var(--aui-height-normal) - 6px);
+    padding: 0 16px;
+    background: transparent;
+    border: 1px solid var(--aui-border-color);
+    border-radius: var(--aui-border-radius);
+    color: rgba(255,255,255, 0.75);
+    font-family: var(--aui-font-main);
+    font-weight: 500;
+    font-size: var(--aui-font-size-normal);
+    letter-spacing: .3px;
+    text-align: center;
+    white-space: nowrap;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+    &:not(&-primary):not(:disabled):not([disabled]):hover {
+        color: var(--aui-color-light);
+        background-color: var(--aui-button-color-hover);
+        border-color: var(--aui-button-color-hover);
+    }
+    
+    &:not(:disabled):active {
+        transform: scale(.95);
+    }
+
+    &.aui-button-icon {
+        padding: 0;
+    }
+    
+    &--loading {
+        cursor: wait;
+        filter: opacity(.6);
+    }
+
+    &--disabled, &--disabled.aui-button-primary {
+        color: var(--aui-color-disabled);
+        border-color: #171717;
+        cursor: not-allowed;
+        background: rgba(255,255,255, .02);
+
+        &:active {
+            transform: none !important;
+        }
+    }
+}
+
+// SIZES
+.aui-button-small {
+    font-size: var(--aui-font-size-small);
+    line-height: calc(var(--aui-height-small) - 10px);
+}
+.aui-button-large {
+    font-size: var(--aui-font-size-large);
+    line-height: calc(var(--aui-height-large) - 2px);
+}
+
+// TYPES
+.aui-button-primary {
+    background-color: var(--aui-color-primary);
+    border-color: var(--aui-color-primary);
+    color: var(--aui-color-light);
+
+    &:not(:disabled):hover {
+        background-color: #095cb5;
+        border-color: #095cb5;
+    }
+}
+
+.aui-button-link {
+    border-color: transparent;
+}
+
+.aui-button-dark {
+    border-color: var(--aui-button-dark-background);
+    background: var(--aui-button-dark-background);
+}
+
+// SHAPES
+.aui-button-round {
+    border-radius: 32px;
+}

@@ -1,0 +1,141 @@
+@import './mixins.scss';
+@import './../components/Input/Input.scss';
+@import './../components/Button/Button.scss';
+@import './../components/Select/Select.scss';
+@import './../components/Dropdown/Dropdown.scss';
+@import './../components/Tabs/Tabs.scss';
+@import './../components/Modal/Modal.scss';
+@import './../components/Drawer/Drawer.scss';
+@import './../components/Checkbox/Checkbox.scss';
+@import './../components/Tooltip/Tooltip.scss';
+@import './../components/Collapse/Collapse.scss';
+@import './../components/Message/Message.scss';
+@import './../components/Form/Form.scss';
+@import './../components/Pagination/Pagination.scss';
+@import './../components/AutoComplete/AutoComplete.scss';
+@import './../components/Upload/Upload.scss';
+@import './../components/Dialog/Dialog.scss';
+@import './../components/Switch/Switch.scss';
+@import './../components/Tag/Tag.scss';
+@import './../components/Alert/Alert.scss';
+@import './../components/Progress/Progress.scss';
+
+
+:root {
+    // COLORS
+    --aui-color-primary: #177ddc;
+    --aui-color-light: #fff;
+    --aui-color-text: rgba(255,255,225,.8);
+    --aui-color-placeholder: #757575;
+    --aui-color-disabled: rgba(255,255,255,.3);
+    --aui-color-button: rgba(255,255,255,.75);
+    --aui-color-success: #068306;
+    --aui-color-warning: #ff7600;
+    --aui-color-error: #d10505;
+    --aui-border-color: rgba(255,255,255,.08);
+    // BACKGROUND: INPUT & SELECT
+    --aui-background: #202020;
+    --aui-background-hover: #252525;
+    --aui-background-error: #750000;
+    --aui-background-disabled: #181818;
+    --aui-background-transparent: rgba(0,0,0,.85);
+    // SIZES
+    --aui-height-small: 32px;
+    --aui-height-normal: 36px;
+    --aui-height-large: 40px;
+    --aui-font-size-small: 12px;
+    --aui-font-size-normal: 14px;
+    --aui-font-size-large: 16px;
+    // BUTTON
+    --aui-button-color-hover: #282828;
+    --aui-button-dark-background: #1d1d1d;
+    // INPUT / SELECT
+    --aui-item-color: #303030;
+    --aui-item-padding: 10px 10px;
+    --aui-items-box-shadow: 0px 0px 15px 0px rgba(0,0,0,.6);
+    --aui-placeholder-font: var(--aui-font-main);
+    --aui-placeholder-color: rgba(255,255,255,.35);
+    // MODAL
+    --aui-modal-background: #181818;
+    --aui-modal-mask-background: rgba(0,0,0,.6);
+    --aui-modal-border-radius: var(--aui-border-radius-large);
+    --aui-modal-header-padding: 14px 24px;
+    --aui-modal-body-padding: 12px 24px;
+    // DRAWER
+    --aui-drawer-background: #181818;
+    --aui-drawer-mask-background: rgba(0,0,0,.6);
+    --aui-drawer-border-radius: var(--aui-border-radius-large);
+    --aui-drawer-header-padding: 14px 24px;
+    --aui-drawer-body-padding: 12px 24px;
+    // CHECKBOX 
+    --aui-checkbox-size: 18px;
+    --aui-checkbox-border-radius: 4px;
+    --aui-checkbox-label-color: rgba(255,255,255,.8);
+    --aui-checkbox-background: var(--aui-background);
+    --aui-checkbox-background-hover: #282828;
+    --aui-checkbox-background-checked: var(--aui-color-primary);
+    // SWITCH
+    --aui-switch-background-outside: var(--aui-background);
+    --aui-switch-background-container: var(--aui-background-disabled);
+    --aui-switch-background-checked: var(--aui-color-primary);
+    --aui-switch-width-small: 30px;
+    --aui-switch-width-normal: 50px;
+    --aui-switch-width-large: 65px;
+    --aui-switch-height-small: 17px;
+    --aui-switch-height-normal: 25px;
+    --aui-switch-height-large: 32px;
+    --aui-switch-handle-small: 12px;
+    --aui-switch-handle-normal: 20px;
+    --aui-switch-handle-large: 27px;
+    --aui-switch-handle-padding: 3px;
+    // COLLAPSE
+    --aui-collapse-background: #181818;
+    --aui-collapse-border-radius: var(--aui-border-radius);
+    --aui-collapse-header-padding: 12px 16px;
+    --aui-collapse-header-color: rgba(255,255,255,.85);
+    --aui-collapse-header-icon-color: rgba(255,255,255,.5);
+    --aui-collapse-content-padding: 16px;
+    // TABS
+    --aui-tabs-padding: 4px;
+    --aui-tabs-tab-background: var(--aui-background);
+    // MESSAGE
+    --aui-message-padding: 12px;
+    --aui-message-background: rgba(0,0,0,.75);
+    --aui-message-color: #fff;
+    --aui-message-border-radius: var(--aui-border-radius);
+    --aui-message-box-shadow: 0 0px 5px rgba(0,0,0,.1);
+    --aui-message-info: var(--aui-color-primary);
+    --aui-message-success: var(--aui-color-success);
+    --aui-message-warning: var(--aui-color-warning);
+    --aui-message-error: var(--aui-color-error);
+    // PAGINATION
+    --aui-pagination-background: #181818;
+    --aui-pagination-page-color: rgba(255,255,255,.75);
+    --aui-pagination-active-background: #2f2f2f;
+    --aui-pagination-active-color: #fff;
+    // UPLOAD
+    --aui-upload-border-color: #443e4d;
+    --aui-upload-hover-background: #282828;
+    // TOOLTIP
+    --aui-tooltip-background: #000;
+    // TAG
+    --aui-tag-color: rgba(255,255,255,.7);
+    --aui-tag-background: #252525;
+    --aui-tag-primary-background: var(--aui-color-primary);
+    --aui-tag-warning-background: darkorange;
+    --aui-tag-error-background: red;
+    --aui-tag-padding: 2px 8px;
+    // ALERT
+    --aui-alert-padding: 8px 12px;
+    --aui-alert-info: var(--aui-color-primary);
+    --aui-alert-success: var(--aui-color-success);
+    --aui-alert-warning: var(--aui-color-warning);
+    --aui-alert-error: var(--aui-color-error);
+    // OTHER
+    --aui-border-radius: 6px;
+    --aui-border-radius-medium: 8px;
+    --aui-border-radius-large: 12px;
+    --aui-font-main: 'Proxima Nova';
+    --aui-font-secoundary: 'Roboto';
+    --aui-padding: 0 12px;
+}

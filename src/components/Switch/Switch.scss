@@ -1,0 +1,85 @@
+.aui-switch {
+    border-radius: 32px;
+    padding: 0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: all .2s;
+    
+    
+    &--loading {
+        filter: brightness(.8);
+        cursor: wait;
+    }
+    
+    &--disabled {
+        filter: brightness(.8);
+        cursor: not-allowed;
+    }
+    
+    &__handle {
+        width: 100%;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            transition: all .2s;
+            left: var(--aui-switch-handle-padding);
+            top: 2px;
+        }
+    }
+    
+    &-normal {
+        width: var(--aui-switch-width-normal);
+        height: var(--aui-switch-height-normal);
+        
+        & > .aui-switch__handle::before, & > .aui-switch__handle::after {
+            width: var(--aui-switch-handle-normal);
+            height: var(--aui-switch-handle-normal);
+        }
+    }
+    
+    &-small {
+        width: var(--aui-switch-width-small);
+        height: var(--aui-switch-height-small);
+        
+        & > .aui-switch__handle::before {
+            width: var(--aui-switch-handle-small);
+            height: var(--aui-switch-handle-small);
+        }
+    }
+    
+    &-large {
+        width: var(--aui-switch-width-large);
+        height: var(--aui-switch-height-large);
+        
+        & > .aui-switch__handle::before {
+            width: var(--aui-switch-handle-large);
+            height: var(--aui-switch-handle-large);
+        }
+    }
+    
+    &-placement-outside {
+        background: var(--aui-switch-background-outside);
+    }
+    
+    &-placement-container {
+        background: var(--aui-switch-background-container);
+    }
+    
+    &--checked {
+        background: var(--aui-switch-background-checked);
+        &.aui-switch-normal > .aui-switch__handle::before {
+            left: calc(100% - var(--aui-switch-handle-normal) - var(--aui-switch-handle-padding));
+        }
+        &.aui-switch-small > .aui-switch__handle::before {
+            left: calc(100% - var(--aui-switch-handle-small) - var(--aui-switch-handle-padding));
+        }
+        &.aui-switch-large > .aui-switch__handle::before {
+            left: calc(100% - var(--aui-switch-handle-large) - var(--aui-switch-handle-padding));
+        }
+    }
+}

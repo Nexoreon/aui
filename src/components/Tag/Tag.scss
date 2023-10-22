@@ -1,0 +1,53 @@
+.aui-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-weight: 500;
+    padding: var(--aui-tag-padding);
+    width: fit-content;
+    font-family: var(--aui-font-main);
+}
+
+// SHAPES
+.aui-tag-rounded {
+    border-radius: 32px;
+}
+
+.aui-tag-squared {
+    border-radius: 4px;
+}
+
+// TYPES
+.aui-tag-normal {
+    background: var(--aui-tag-background);
+    color: var(--aui-tag-color);
+}
+
+.aui-tag-primary {
+    background: var(--aui-tag-primary-background);
+    color: var(--aui-color-light);
+}
+
+.aui-tag-warning {
+    background: var(--aui-tag-warning-background);
+    color: var(--aui-color-light);
+}
+
+.aui-tag-error {
+    background: var(--aui-tag-error-background);
+    color: var(--aui-color-light);
+}
+
+// SIZES
+.aui-tag-size-small {
+    font-size: 10px;
+}
+
+.aui-tag-size-normal {
+    font-size: 12px;
+}
+
+.aui-tag-size-large {
+    font-size: 14px;
+}

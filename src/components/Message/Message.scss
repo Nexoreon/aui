@@ -1,0 +1,120 @@
+.aui-messages {
+    position: fixed;
+    z-index: 10000;
+    bottom: 25px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+    transition: all .3s;
+
+    @include respond(phone) {
+        top: 10px;
+        right: 0;
+        left: 0;
+        transform: translateX(50%);
+        align-items: unset;
+        bottom: unset;
+        flex-direction: column-reverse;
+    }
+}
+
+.aui-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--aui-message-background);
+    border-radius: var(--aui-message-border-radius);
+    padding: var(--aui-message-padding);
+    box-shadow: var(--aui-message-box-shadow);
+    transform: translateX(100vh);
+    transition: all .5s;
+    backdrop-filter: blur(8px);
+    color: #fff;
+    overflow: hidden;
+
+    @include respond(phone) {
+        max-width: 87vw;
+        min-height: 20px;
+        background: #000;
+        transform: translateX(-50%) translateY(-100vh);
+
+        &__timer {
+            visibility: hidden;
+        }
+    }
+
+    &-enter, &-enter-done {
+        transform: translateX(-25px);
+
+        @include respond(phone) {
+            transform: translateY(0%) translateX(-50%);
+        }
+    }
+
+    &-exit, &-exit-active {
+        transform: translateX(100vh);
+    }
+
+    &-info &__icon {
+        color: var(--aui-message-info);
+    }
+
+    &-success &__icon {
+        color: var(--aui-message-success);
+    }
+    
+    &-warning &__icon {
+        color: var(--aui-message-warning);
+    }
+    
+    &-error &__icon {
+        color: var(--aui-message-error);
+    }
+
+    &__icon {
+        font-size: 18px;
+        color: #fff;
+        z-index: 200;
+    }
+
+    &__content {
+        flex: 1 1;
+        color: var(--aui-message-color);
+        font-size: 14px;
+        font-weight: 500;
+        font-family: var(--font-main);
+        padding: 0 10px 0 5px;
+        z-index: 200;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 10px;
+    }
+    
+    &__close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        color: rgba(255,255,255,.7);
+        transition: all .2s;
+        padding: 0 4px 0 13px;
+        border-left: 1px solid rgba(255,255,255,.1);
+        
+        &:hover {
+            color: #fff;
+        }
+    }
+    
+    &__timer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: #303030;
+    }
+}

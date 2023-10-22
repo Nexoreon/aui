@@ -1,0 +1,36 @@
+.db-form {
+    height: 100%;
+
+    &__buttons {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex: 1 1;
+        gap: 12px;
+        padding-bottom: 8px;
+    }
+
+    & .aui-form-controller .tox.tox-fullscreen {
+        left: calc(0px - 100vw + 405px) !important;
+        top: -30px !important;
+
+        @include respond(phone) {
+            left: 0 !important;
+            top: 0 !important;
+        }
+    }
+
+    & .db-richEditor {
+        max-height: 350px;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    }
+}
+
+.tox { // POSITION FIX
+    z-index: 10000 !important;
+}

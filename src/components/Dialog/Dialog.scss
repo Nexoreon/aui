@@ -1,0 +1,52 @@
+.aui-modal-dialog {
+    display: flex;
+    gap: 15px;
+    padding-top: 25px;
+    
+
+    &__icon > i {
+        font-size: 25px;
+ 
+        &.fa-circle-info {
+            color: var(--aui-color-primary);
+        }
+        &.fa-circle-exclamation {
+            color: orange;
+        }
+        &.fa-circle-check {
+            color: green;
+        }
+        &.fa-circle-xmark {
+            color: red;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__header > h4 {
+        margin: 0;
+        font-size: 16px;
+        line-height: 100%;
+        color: rgba(255,255,255,.9)
+    }
+
+    &__text {
+        display: flex;
+        gap: 20px;
+        color: rgba(255,255,255,.8);
+        font-size: 14px;
+        
+        & > p { margin: 0; line-height: 150%;}
+    }
+    
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        padding: 10px 25px 25px 25px;
+    }
+}

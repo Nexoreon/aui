@@ -1,0 +1,119 @@
+.aui-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    &__mask {
+        position: absolute;
+        z-index: 11000;
+        width: 100%;
+        height: 100%;
+        background-color: var(--aui-modal-mask-background);
+        backdrop-filter: blur(5px);
+        opacity: 0;
+        transition: all .3s;
+    }
+
+    &-enter, &-enter-done {
+        .aui-modal__mask {
+            opacity: 1;
+        }
+
+        .aui-modal-content {
+            transform: scale(1);
+        }
+    }
+
+    &-exit {
+        .aui-modal__mask {
+            opacity: 0;
+        }
+
+        .aui-modal-content {
+            transform: scale(.6);
+            opacity: 0;
+        }
+    }
+}
+
+.aui-modal-content {
+    z-index: 12000;
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    max-height: 80vh;
+    background-color: var(--aui-modal-background);
+    border-radius: var(--aui-modal-border-radius);
+    opacity: 1;
+    transform: scale(.6);
+    transition: all .3s;
+    overflow: hidden;
+    
+    @include respond(phone) {
+        min-width: 90vw;
+    }
+    
+    
+    &__header {
+        position: relative;
+        padding: var(--aui-modal-header-padding);
+        
+        & > h4 {
+            margin: 0;
+            font-size: 18px;
+        }
+    }
+    
+    &__close {
+        position: absolute;
+        z-index: 12100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 8px;
+        right: 8px;
+        width: 35px;
+        height: 35px;
+        color: rgba(255,255,255,.45);
+        font-size: 23px;
+        text-align: center;
+        border-radius: 50%;
+        
+        &:hover {
+            color: var(--aui-color-light);
+        }
+    }
+    
+    &__body {
+        padding: var(--aui-modal-body-padding);
+        overflow: hidden;
+        overflow-y: auto;
+        max-height: 72vh;
+    }
+}
+
+.aui-modal-content-tiny {
+    width: 20vw;
+}
+
+.aui-modal-content-small {
+    width: 30vw;
+}
+
+.aui-modal-content-normal {
+    width: 45vw;
+}
+
+.aui-modal-content-large {
+    width: 60vw;
+}
+
+.aui-modal-content-huge {
+    width: 75vw;
+}

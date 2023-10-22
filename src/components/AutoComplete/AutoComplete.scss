@@ -1,0 +1,29 @@
+.aui-autocomplete {
+    position: relative;
+}
+
+.aui-autocomplete-wrapper {
+    z-index: 10000;
+}
+
+.aui-autocomplete-overlay {
+    @extend .aui-select-overlay;
+    display: flex;
+    flex-direction: column;
+
+    &-enter, &-enter-done {
+        visibility: visible;
+        opacity: 1;
+        max-height: 200px;
+    }
+}
+
+.aui-autocomplete-item {
+    @extend .aui-select-item;
+    display: flex;
+    gap: 15px;
+    
+    & p {
+        margin: 0;
+    }
+}

@@ -1,0 +1,58 @@
+.aui-pagination {
+    display: flex;
+    padding: 4px;
+    background-color: var(--aui-pagination-background);
+    border-radius: var(--aui-border-radius);
+    width: fit-content;
+
+    @include respond(phone) {
+        overflow-x: auto;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border-radius: 8px;
+        padding: 5px 0;
+        width: 30px;
+        color: var(--aui-pagination-page-color);
+        font-weight: 500;
+        transition: transform .2s;
+    
+        &:not(.aui-pagination-page--active):active {
+            transform: scale(.8);
+        }
+    
+        &:hover {
+            color: #fff;
+        }
+    
+        &--active {
+            background-color: var(--aui-pagination-active-background);
+            color: var(--aui-pagination-active-color);
+        }
+    }
+
+    &__arrow {
+        font-size: 14px;
+        width: 25px;
+
+        &--disabled {
+            filter: brightness(.5);
+            cursor: not-allowed;
+        }
+    }
+}
+
+// SIZES
+.aui-pagination-small {
+    font-size: var(--aui-font-size-small);
+}
+.aui-pagination-normal {
+    font-size: var(--aui-font-size-normal);
+}
+.aui-pagination-large {
+    font-size: var(--aui-font-size-large);
+}
